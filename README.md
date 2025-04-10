@@ -20,6 +20,7 @@ Before running the project, ensure you have the following installed:
 
 - Python 3.6+ (recommended).
 - `pip` or `conda` for managing dependencies.
+```
 
 ## Installation
 

@@ -1,96 +1,123 @@
-# Resume Builder Project
-
 ```markdown
-# Resume Builder from CSV
+# Resume Builder: Interactive Resume Generator
 
 ## Overview
-This project allows you to generate a professional resume from a structured CSV file. It is designed to be simple, flexible, and easy to use. The script reads data from a CSV file, organizes it by category (e.g., Skills, Education, Projects), and formats it into a clean, readable resume in **Markdown** format. The resume can then be converted into various formats like PDF or plain text.
+
+The Resume Builder is a Python-based application designed to help users create a personalized resume by collecting information interactively and generating a Markdown file. This tool allows users to easily input their professional details such as summary, education, skills, experience, and projects through a guided command-line interface.
 
 ## Features
-- **CSV Input**: Store resume data in a CSV format with sections like Skills, Education, Projects, etc.
-- **Customizable Sections**: Customize the order and content of resume sections.
-- **Flexible Output**: Generates a resume in **Markdown** format, which can be easily converted to PDF or printed.
-- **Easy to Use**: No prior programming knowledge is required to use the script.
+
+- Interactive prompts to collect resume information.
+- Customizable section headers (Professional Summary, Education, Skills, Experience, Projects).
+- Saves collected data in a CSV file format.
+- Generates a well-structured resume in Markdown format.
+- Users can modify or add more sections to suit their personal needs.
 
 ## Requirements
-- Python 3.x
-- A CSV file containing your resume data (see format below)
-- Optional: Conda or virtualenv for environment management
+
+Before running the project, ensure you have the following installed:
+
+- Python 3.6+ (recommended).
+- `pip` or `conda` for managing dependencies.
 
 ## Installation
 
-**Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/resume-builder.git
-   cd resume-builder
-   ```
+### Step 1: Clone the Repository
 
-1. **Create a virtual environment** (recommended):
-   If you're using `conda`, run:
+Clone the repository to your local machine using the following command:
 
-   ```bash
-   conda create --name resume-env python=3.11
-   conda activate resume-env
-   ```
+```bash
+git clone https://github.com/dev-jaser/pyResume.git
+```
 
-   Or with `venv`:
+### Step 2: Create and Activate a Virtual Environment
 
-   ```bash
-   python -m venv venv
-   .\venv\Scripts\activate  # For Windows
-   source venv/bin/activate # For macOS/Linux
-   ```
+It is recommended to use a virtual environment to manage project dependencies.
 
-2. **Install dependencies**:
-   The necessary Python packages are minimal for this project. Install them using:
+Using `venv`:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+python -m venv resume-env
+```
 
-3. **CSV Data Format**:
-   Ensure your CSV file (`master_resume_content.csv`) follows this structure:
+Activate the environment:
 
-   ```csv
-   Category,Title,Details
-   Professional Summary,Intro,"Brief description of your professional background."
-   Education,University Name,"B.S. in Computer Science, ABC University, 2023"
-   Skill,Programming Languages,"Python, Java, C++"
-   Project,Security App,"Developed a security application to manage passwords."
-   ```
+- On Windows:
 
-   **Note**: Each row contains a `Category` (like "Education" or "Skills"), a `Title` (like the university name or skill), and the `Details` (like the degree or a description).
+  ```bash
+  resume-env\Scripts\activate
+  ```
 
-## Usage
+- On macOS/Linux:
 
-1. **Prepare your CSV file**:
-   Ensure that your `master_resume_content.csv` is structured correctly as shown above and placed inside the `data/` folder.
+  ```bash
+  source resume-env/bin/activate
+  ```
 
-2. **Run the Python script**:
-   After setting up everything, you can generate your resume by simply running the script:
+Alternatively, if you're using `conda`, you can create a new environment:
 
-   ```bash
-   python main.py
-   ```
+```bash
+conda create --name resume-env python=3.9
+conda activate resume-env
+```
 
-3. **View the Output**:
-   The script will generate a Markdown file `generated_resume.md`. You can view it using any Markdown viewer, or convert it to PDF using a Markdown-to-PDF converter like `pandoc` or a similar tool.
+### Step 3: Install Dependencies
 
-4. **Customizing the Resume**:
-   - You can modify the section order in the `section_order` list within `main.py`.
-   - Customize the CSV format to add new sections or change existing ones.
+Once your environment is active, install the required dependencies:
 
-## Advanced Features (Optional)
+```bash
+pip install -r requirements.txt
+```
 
-- **Convert to PDF**: Use libraries like `reportlab`, `weasyprint`, or `markdown-pdf` to convert your Markdown file into a PDF.
-- **Web Version**: If you'd like, you can extend this project to generate HTML files or even build a web-based resume generator using Flask or Django.
+If you're using Conda, ensure that all necessary dependencies are installed and available.
+
+## How to Use
+
+### Step 1: Run the Program
+
+Start the program by running the following command:
+
+```bash
+python main.py
+```
+
+### Step 2: Input Your Information
+
+The program will prompt you for the following sections:
+
+- **Professional Summary**
+- **Education**
+- **Skills**
+- **Experience**
+- **Projects**
+
+For each section, you will be prompted to input a title and description. If you wish to finish a section, type `done`. After collecting all information, the program will generate a CSV file (`resume_data.csv`) to store the collected data.
+
+### Step 3: Generate the Resume
+
+Once the data is collected, the program will generate a resume in Markdown format. You will be prompted to specify the output file path (e.g., `generated_resume.md`), where the generated resume will be saved.
+
+## Project Structure
+
+```plaintext
+resume-builder/
+│
+├── main.py                 # Main program logic to generate the resume.
+├── requirements.txt        # List of dependencies required to run the project.
+├── resume_data.csv         # CSV file storing the collected resume data.
+└── generated_resume.md     # Output file containing the generated resume in Markdown format.
+```
+
+## Customization
+
+You can customize the resume generator by adding new sections or adjusting the format in the code. Modify the sections listed in the `collect_data()` function to fit your personal needs. Additionally, you can adjust the `generate_resume()` function to change the resume format to suit your preferences.
 
 ## Contributing
 
-Feel free to fork this repository, submit issues, or pull requests. I welcome improvements to the project!
+Feel free to fork the repository and submit pull requests if you have suggestions for improvements or new features. Contributions are welcome!
 
 ## License
 
-This project is open-source and available under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ----

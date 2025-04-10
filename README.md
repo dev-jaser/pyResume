@@ -1,5 +1,6 @@
-```markdown
 # Resume Builder: Interactive Resume Generator
+
+```markdown
 
 ## Overview
 

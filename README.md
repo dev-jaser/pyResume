@@ -1,7 +1,5 @@
 # Resume Builder: Interactive Resume Generator
 
-```markdown
-
 ## Overview
 
 The Resume Builder is a Python-based application designed to help users create a personalized resume by collecting information interactively and generating a Markdown file. This tool allows users to easily input their professional details such as summary, education, skills, experience, and projects through a guided command-line interface.
@@ -20,7 +18,7 @@ Before running the project, ensure you have the following installed:
 
 - Python 3.6+ (recommended).
 - `pip` or `conda` for managing dependencies.
-```
+
 
 ## Installation
 
